@@ -21,7 +21,7 @@ public class WebSecurity {
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt(jwt -> {
-                            //jwt.jwtAuthenticationConverter()
+                            jwt.jwtAuthenticationConverter()
                         })
                 ).build();
     }
