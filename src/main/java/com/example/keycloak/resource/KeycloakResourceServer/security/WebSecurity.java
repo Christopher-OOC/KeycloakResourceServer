@@ -14,7 +14,7 @@ public class WebSecurity {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-
+        // JwtRoleConverter class
         JwtRoleConverter jwtRoleConverter = new JwtRoleConverter();
         JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
         jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(jwtRoleConverter);
@@ -28,6 +28,7 @@ public class WebSecurity {
                         .jwt(jwt -> {
                             jwt.jwtAuthenticationConverter(jwtAuthenticationConverter);
                         })
+
                 ).build();
     }
 
