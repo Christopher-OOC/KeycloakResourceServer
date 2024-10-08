@@ -33,10 +33,10 @@ public class UserController {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        user1.put("access_token", jwt.getClaimAsString("scope"));
-        user2.put("access_token", jwt.getClaimAsString("scope"));
-
-        System.out.println("Token: " + authentication);
+//        user1.put("access_token", jwt.getClaimAsString("scope"));
+//        user2.put("access_token", jwt.getClaimAsString("scope"));
+//
+//        System.out.println("Token: " + authentication);
 
         return Arrays.asList(user1, user2);
     }
