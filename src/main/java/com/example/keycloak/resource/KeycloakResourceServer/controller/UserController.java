@@ -1,6 +1,8 @@
 package com.example.keycloak.resource.KeycloakResourceServer.controller;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,8 +31,12 @@ public class UserController {
     @GetMapping("/users")
     public List<Map<String, String>> getUsers(@AuthenticationPrincipal Jwt jwt) {
 
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
         user1.put("access_token", jwt.getClaimAsString("scope"));
         user2.put("access_token", jwt.getClaimAsString("scope"));
+
+        System.out.println("Token: " + authentication);
 
         return Arrays.asList(user1, user2);
     }
