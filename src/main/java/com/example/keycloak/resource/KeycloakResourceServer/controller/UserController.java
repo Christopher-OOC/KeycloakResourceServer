@@ -41,8 +41,6 @@ public class UserController {
 
 //        user1.put("access_token", jwt.getClaimAsString("scope"));
 //        user2.put("access_token", jwt.getClaimAsString("scope"));
-//
-//        System.out.println("Token: " + authentication);
 
         user1.put("port", port);
         user2.put("port", port);
