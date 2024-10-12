@@ -48,5 +48,4 @@ public class UserController {
         return Arrays.asList(user1, user2);
     }
 
-
 }
